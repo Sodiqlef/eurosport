@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import Error404Page from "./components/Shared/error404/error404";
+import NavBar from "./components/Shared/navbar/navbar";
+import HomePage from "./components/Shared/homepage";
+import Bet from "./components/bet/bet";
+import Support from "./components/support/support";
 import './App.css';
+import './fontawesome-free-5.15.4-web/css/all.css'
 
-function App() {
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    
+    <Router>
+      <NavBar />
+      <main className="w3-container">
+      <Switch>
+          <Route path='/' exact><HomePage /></Route>
+          <Route path='/support' exact><Support /></Route>
+          <Route path='/bet' exact><Bet /></Route>
+          <Route path='/error404' exact><Error404Page /></Route>
+          <Redirect to="/error404" />
+      </Switch>
+      </main>
+      
+    </Router>
+    
+  )
 }
+
 
 export default App;

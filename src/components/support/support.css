@@ -1,0 +1,25 @@
+
+.blue-bg{
+    background-color: #00f !important;
+    color: #fff !important;
+    
+}
+
+.form-img {
+    width: 50%;
+    float: right;
+    width: 60%;
+    height: 100%;
+    
+}
+
+@media (max-width: 700px) {
+    .support-form{
+        width: 100%;
+        min-height: 90vh;
+        
+    }
+    .form-img{
+        display: none;
+    }
+}

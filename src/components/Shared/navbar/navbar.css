@@ -1,0 +1,36 @@
+
+.euro {
+    font-weight: 900;
+    color: #191919;
+    
+}
+.sports {
+    font-weight: 900;
+    color: #0000FF;
+}
+h1 {
+    font-size: medium;
+}
+.pad-top {
+    padding-top: 1%;
+}
+.side-pad {
+    padding-left: 25%;
+    height: 100%;
+}
+.nav-item{
+    border-style: solid;
+    border-top: 1px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: #707070;
+    
+}
+
+.nav-link:hover {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    
+}
+

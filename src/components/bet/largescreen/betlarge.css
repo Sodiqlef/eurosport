@@ -1,0 +1,20 @@
+.game {
+    
+    padding-left: 33.3%;
+    padding-right: 3.3%;
+}
+.game-no{
+    padding-right: 3.3%;
+}
+.p-width{
+    width: 20%;
+    border-radius: 10%;
+    border-color: blue !important;
+    border-style: solid !important;
+    color: blue !important;
+    
+}
+.btn-active {
+    background-color: blue !important;
+    color: white !important;
+}

@@ -1,0 +1,18 @@
+.game-btn {
+    
+    padding-left: 3.3%;
+    padding-right: 3.3%;
+}
+
+.m-width{
+    width: 26.7%;
+    border-radius: 10%;
+    border-color: blue !important;
+    border-style: solid !important;
+    color: blue !important;
+    
+}
+.btn-active {
+    background-color: blue !important;
+    color: white !important;
+}
