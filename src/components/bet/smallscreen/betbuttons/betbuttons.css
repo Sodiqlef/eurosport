@@ -7,12 +7,12 @@
 .m-width{
     width: 26.7%;
     border-radius: 10%;
-    border-color: blue !important;
+    border-color: grey !important;
     border-style: solid !important;
-    color: blue !important;
+    color: grey !important;
     
 }
-.btn-active {
-    background-color: blue !important;
+.btn-actives {
+    background-color: grey !important;
     color: white !important;
 }

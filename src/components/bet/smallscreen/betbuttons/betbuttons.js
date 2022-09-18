@@ -126,12 +126,13 @@ x2: 1.8
 
     return <div className="flex-display">
         
-        <b className="game-btn"><li className={(homeAway)? 'btn-active w3-btn m-width ': "w3-btn m-width  "} onClick={homeAwayHandler}>1X2</li></b>        
-        <b className="game-btn"><li className={(overUnder)? 'btn-active w3-btn m-width ': "w3-btn m-width  "} onClick={overUnderHandler}>o/u 2.5</li></b>
-        <b className="game-btn"><li className={(doubleChance)? 'btn-active w3-btn m-width ': "w3-btn m-width  "} onClick={doubleChanceHandler}>DC</li></b>
+        <b className="game-btn"><li className={(homeAway)? 'btn-actives w3-btn m-width ': "w3-btn m-width  "} onClick={homeAwayHandler}>1X2</li></b>        
+        <b className="game-btn"><li className={(overUnder)? 'btn-actives w3-btn m-width ': "w3-btn m-width  "} onClick={overUnderHandler}>o/u 2.5</li></b>
+        <b className="game-btn"><li className={(doubleChance)? 'btn-actives w3-btn m-width ': "w3-btn m-width  "} onClick={doubleChanceHandler}>DC</li></b>
 
 
 {/** This is the setup for the home, away and draw bet*/}
+<div className="container">
         {(homeAway && !overUnder && !doubleChance)  ? <HomeAway matches={allMatches}/>: null}
 
 
@@ -141,6 +142,7 @@ x2: 1.8
 
 {/** This is the setup for the double chance bet*/}
         {(!homeAway && !overUnder && doubleChance)  ? <DoubleChance matches={allMatches}/> : null}
+        </div>
     </div>
 
 

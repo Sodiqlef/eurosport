@@ -5,6 +5,7 @@ import HomePage from "./components/Shared/homepage";
 import Bet from "./components/bet/bet";
 import Support from "./components/support/support";
 import './App.css';
+import MatchStat from "./components/Shared/matches/matchstat";
 import './fontawesome-free-5.15.4-web/css/all.css'
 
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/' exact><HomePage /></Route>
           <Route path='/support' exact><Support /></Route>
           <Route path='/bet' exact><Bet /></Route>
+          <Route path='/match/:matchId' exact><MatchStat /></Route>
           <Route path='/error404' exact><Error404Page /></Route>
           <Redirect to="/error404" />
       </Switch>

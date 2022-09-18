@@ -17,7 +17,7 @@ const NavBar = () => {
         
             <NavLink to="/" className="navbar-brand" exact><h3>
                 <span className="euro">EURO</span>
-                <span className="sports">SPORTS</span></h3> 
+                <span className="sports">SPORT</span></h3> 
             </NavLink>
             
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation " onClick={openDrawerHandler}>

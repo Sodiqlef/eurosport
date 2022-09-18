@@ -23,16 +23,16 @@
 }
 .content b{
     
-    border: 1px solid blue ;
-    background-color: blue;
+    border: 1px solid #7f7 ;
+    background-color: #7f7;
     border-radius: 25%;
     padding: 2%;
     color: white;
 }
 .content-2 b{
     
-    border: 1px solid blue ;
-    background-color: blue;
+    border: 1px solid #7f7 ;
+    background-color: #7f7;
     border-radius: 25%;
     padding-right: 5%;
     padding-left: 5%;

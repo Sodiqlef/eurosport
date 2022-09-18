@@ -1,0 +1,21 @@
+.matches-datetime{
+    float: right;
+}
+.matches-pad{
+    padding-right: 50%;
+}
+.matches-float-rt{
+    float: left;
+    width: 50%;
+}
+
+@media (max-width: 700px) {
+.matches-pad{
+    padding-right: 0%;
+} 
+
+.matches-float-rt{
+    float: none;
+    width: 100%;
+}
+}

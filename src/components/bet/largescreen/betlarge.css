@@ -9,12 +9,12 @@
 .p-width{
     width: 20%;
     border-radius: 10%;
-    border-color: blue !important;
+    border-color: #7f7 !important;
     border-style: solid !important;
-    color: blue !important;
+    color: #7f7 !important;
     
 }
 .btn-active {
-    background-color: blue !important;
+    background-color: #7f7 !important;
     color: white !important;
 }
