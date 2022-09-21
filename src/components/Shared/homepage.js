@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Matches from './matches/matches';
 import './homepage.css'
+import Standings from './standings';
 
 
 const HomePage = (props) => {
@@ -39,6 +40,7 @@ const HomePage = (props) => {
         </div>
 
          {(matchesButton) && <Matches />}
+         {(standingsButton) && <Standings />}
 
     </React.Fragment>
   }
