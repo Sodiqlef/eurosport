@@ -1,81 +1,62 @@
-import React, {useReducer} from 'react';
-import { validate } from './validator.js';
+import React, {useReducer} from "react";
+import { validate } from "./validator";
 
-import './input.css';
+
+import './input.css'
 
 
 const inputReducer = (state, action) => {
-    switch(action.type){
-        case 'CHANGE': 
+    switch (action.type) {
+        case "CHANGE":
+            return{
+                ...state,
+                value: action.val,
+                isValid: validate(action.val, action.validators)
+            }
+        case "BLUR":
             return {
-                ...state, 
-                value: action.val, 
-                isValid: validate(action.val, action.validator)};
-        case 'BLUR': 
-            return {
-                ...state, 
-                isTouched: true};
+                ...state,
+                isTouched: true
+            }
         default:
-            return state
+            return state;
     }
 }
 
-
 const Input = (props) => {
-    const [inputState, dispatch] = useReducer(inputReducer, {
-        value: '',
-        isValid: false,
-        isTouched: false
-    })
-
-    const onChangeHandler = (event) => {
-        dispatch({
-            type: 'CHANGE',
+    const [inputState, dispatch] = useReducer(inputReducer, 
+        {
+            value:'', 
+            isValid: false,
+            isTouched: false});
+    
+    const changeHandler = (event) => {
+        dispatch(
+            {type: "CHANGE", 
             val: event.target.value,
-            validator: props.validators
-        })
+            validators: props.validators})
     }
 
-    const onBlurHandler = () => {
+    const blurHandler = () => {
         dispatch({
-            type: 'BLUR'
+            type: "BLUR"
         })
     }
-
-
-let element;
-    if (props.ot === 'input') {
-        element = <React.Fragment><input type={'text'} 
-        className="input-support" 
-        placeholder={props.placeholder }
-        onChange={onChangeHandler}
-        value={inputState.value}
-        onBlur={onBlurHandler}
-        />
-        <br></br><br></br>
-        </React.Fragment>
-        }else if(props.ot==='textarea'){
-             element = <React.Fragment>
-            <textarea 
-            cols={20} 
-            rows={15} 
-            placeholder={props.placeholder} 
-            onChange={onChangeHandler}
-            value={inputState.value}
-            onBlur={onBlurHandler}
-            />
-            <br></br>
-            </React.Fragment>
-        }
-        return (
-            <div className={(!inputState.isValid && inputState.isTouched) ? 'form-invalid' : ''}>
-                {(!inputState.isValid && inputState.isTouched) ? 
-                <small>Please fill in all required field</small>: null} 
-                {element}
-                
+    return ( 
+        <React.Fragment>
+            <div className={!inputState.isValid && inputState.isTouched ? 'form-group form-invalid' : 'form-group'} >
+                <label>{props.label}</label>
+                <input 
+                    type={props.type} 
+                    className='form-control'
+                    placeholder={props.placeholder}
+                    onChange={changeHandler}
+                    value={inputState.val}
+                    onBlur={blurHandler}
+                />
             </div>
-        )
-
-    }
-
+        </React.Fragment>
+     );
+}
+ 
 export default Input;
