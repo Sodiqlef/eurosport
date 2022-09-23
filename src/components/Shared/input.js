@@ -42,6 +42,7 @@ const Input = (props) => {
             type: "BLUR"
         })
     }
+    
     return ( 
         <React.Fragment>
             <div className={!inputState.isValid && inputState.isTouched ? 'form-group form-invalid' : 'form-group'} >
