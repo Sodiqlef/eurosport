@@ -1,4 +1,4 @@
-import React, {useReducer} from "react";
+import React, {useReducer, useEffect} from "react";
 import { validate } from "./validator";
 
 
@@ -24,11 +24,21 @@ const inputReducer = (state, action) => {
 }
 
 const Input = (props) => {
-    const [inputState, dispatch] = useReducer(inputReducer, 
-        {
-            value:'', 
-            isValid: false,
-            isTouched: false});
+
+    const [inputState, dispatch] = useReducer(inputReducer, {
+        value: '',
+        isTouched: false,
+        isValid: false
+      });
+
+
+    const { id, onInput } = props;
+    const { value, isValid } = inputState;
+  
+    useEffect(() => {
+      onInput(id, value, isValid)
+    }, [id, value, isValid, onInput]);
+
     
     const changeHandler = (event) => {
         dispatch(
@@ -48,6 +58,7 @@ const Input = (props) => {
             <div className={!inputState.isValid && inputState.isTouched ? 'form-group form-invalid' : 'form-group'} >
                 <label>{props.label}</label>
                 <input 
+                    id={props.id}
                     type={props.type} 
                     className='form-control'
                     placeholder={props.placeholder}
@@ -60,4 +71,4 @@ const Input = (props) => {
      );
 }
  
-export default Input;
+export default Input; 
