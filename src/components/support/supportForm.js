@@ -52,8 +52,12 @@ const SupportForm = () => {
           inputId: id
         });
       }, []);
+
+      const submitHandler = (event) => {
+            event.preventDefault()
+      }
     
-    return ( <form>
+    return ( <form onSubmit={submitHandler}>
         <Input 
         id="email"
         element="input"
@@ -73,7 +77,7 @@ const SupportForm = () => {
         onInput={inputHandler}/>
 
         <button type="submit" disabled={!formState.isValid}>
-            ADD PLACE
+            SUBMIT
         </button>
     </form> );
 }
